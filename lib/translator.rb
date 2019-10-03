@@ -10,9 +10,15 @@ def load_library(file)
   result
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file, english_emoji)
+  library = load_library(file)
+  if library["get_japanese_emoticon"].include?(english_emoji)
+    return library["get_japanese_emoticon"][english_emoji]
+  else
+  "Sorry, that emoticon was not found"
+  end
 end
+
 
 def get_english_meaning
   # code goes here
